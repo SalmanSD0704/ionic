@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!loginbtn">
+    <ion-button expand="full" (click)="loginWithGoogle($event)">login with Google</ion-button>
+  </div>
+
+  <ion-list *ngIf="loginbtn">
+    <ion-list-header> UserInfo </ion-list-header>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="{{userInfo?.avatar_url}}" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{userInfo?.full_name}}</h2>
+        <h3>{{userInfo?.email}}</h3>
+
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
